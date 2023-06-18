@@ -1,5 +1,6 @@
 import path from 'path';
 
+// npm modules
 import express from 'express';
 import hbs from 'hbs';
 
@@ -11,8 +12,9 @@ const __dirname = new URL('.', import.meta.url).pathname
 import index from './routes/index.js';
 
 // configuring views and hbs engine
-app.set('views', `${__dirname}/views`)
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+
 
 // configuring static elements
 app.use(express.static(path.join(__dirname, 'public')));
