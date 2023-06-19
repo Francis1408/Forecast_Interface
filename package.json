@@ -7,9 +7,6 @@
     "test": "test",
     "start": "node app.js"
   },
-  "engines": {
-    "node": "14.x"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/Francis1408/Forecast_Interface"
