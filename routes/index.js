@@ -17,7 +17,7 @@ let handleSendingData = function(method) {
         info.lista = _.map(req.body, function(value, key){
             return {nome : key, valor : value};
         });
-
+        
         res.render('index', info);
     }
 
