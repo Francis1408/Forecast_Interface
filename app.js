@@ -9,7 +9,8 @@ const app = express();
 const __dirname = new URL('.', import.meta.url).pathname
 
 // routers
-import index from './routes/index.js';
+import index from './routes/index.js'
+import api from './routes/api.js'
 
 // configuring views and hbs engine
 app.set('views', path.join(__dirname, 'views'));
@@ -21,6 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // configuring route
 app.use('/', index);
+app.use('/api', api);
 
 // error 404 exception
 app.use( (req, res, next) => {
