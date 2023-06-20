@@ -1,29 +1,29 @@
 import express from 'express'
-import url from 'url'
 import _ from 'underscore'
+import { PrismaClient } from '@prisma/client'
 
 const router = express.Router();
+const prisma = new PrismaClient();
 
-// GET home page
+// Fetch the entire table and shows the last content
 
-let handleSendingData = function(method) {
-    return function(req, res) {
-        let info = {};
+router.get('/', async (req, res, next) => {
 
-        info.metodo = method;
-        info.cru = url.parse(req.url).query;
-        info.dados = req.query;
-        info.lista = _.map(req.body, function(value, key){
-            return {nome : key, valor : value};
-        });
+    try {
+        const content = await prisma.weather.findMany();
+        console.log(content[0]);
 
-        res.render('index', info);
+        res.render('index', {
+            temp : content[0].temperature,
+            hum : content[0].humidity,
+            time : content[0].time
+        }); 
+
+    } catch (error) {
+        console.log(error)
+        next(error)
     }
-
-}
-
-let getData = handleSendingData('GET');
-
-router.get('/', getData);
+    
+});
 
 export default router
