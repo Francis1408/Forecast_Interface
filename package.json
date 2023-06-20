@@ -6,7 +6,8 @@
   "scripts": {
     "test": "test",
     "start": "node app.js",
-    "postinstall": "prisma generate"
+    "postinstall": "prisma generate",
+    "vercel-build": "prisma generate && prisma migrate && npm build"
   },
   "repository": {
     "type": "git",
