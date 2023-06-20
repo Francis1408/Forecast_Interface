@@ -1,3 +1,23 @@
-body {
-    color: red;
+@import url(fontes.css);
+
+html, body {
+    background-image: url('../img/background.jpg');
+    height: 100%;
+    background-size: cover;
+    text-align: center;
+    margin: 0;
+}
+
+h1 {
+    font-family: 'Alphasmok';
+    color: white;
+    font-size: 60px;
+    padding-top: 30px;
+    margin: 0;
+}
+
+.forecast-data {
+    display: flex;
+    justify-content: space-around;
+    height: auto;
 }
