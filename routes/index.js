@@ -11,12 +11,13 @@ router.get('/', async (req, res, next) => {
 
     try {
         const content = await prisma.weather.findMany();
-        console.log(content[0]);
+        const data = content.pop();
+        console.log(data);
 
         res.render('index', {
-            temp : content[0].temperature,
-            hum : content[0].humidity,
-            time : content[0].time
+            temp : data.temperature,
+            hum : data.humidity,
+            time : data.time
         }); 
 
     } catch (error) {
