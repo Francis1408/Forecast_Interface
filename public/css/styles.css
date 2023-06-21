@@ -13,13 +13,28 @@ h1 {
     color: white;
     font-size: 60px;
     padding-top: 30px;
+    padding-bottom: 30px;
     margin: 0;
 }
 
-.forecast-data {
+.forecast-frame {
+    height: fit-content;
+    background-color: rgba(84, 83, 83, 0.5);
+    margin: 0 10%;
+}
+
+.data {
     display: flex;
     justify-content: space-around;
-    height: auto;
+}
+
+.frame-header {
+    padding: 30px;
+}
+
+.frame-footer {
+    padding: 30px;
+    text-align: right;
 }
 
 .thermometer {
@@ -80,4 +95,10 @@ h1 {
     bottom: -22px;
     border-radius: 10px 10px 0 0;
     background-color: #ff3d00;
+}
+
+.temp-value, .hum-value {
+    font-size: 30px;
+    margin: 0px;
+    
 }

@@ -1,32 +1,40 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Redes Forecast</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
     <h1>REDES FORECAST</h1>
-    <p>{{time}}</p>
-    <div class="forecast-data">
+    <div class="forecast-frame">
+      <div class="frame-header">
+        <p class="time-value">{{time}}</p>
+      </div>
+      <div class="data">
         <div>
-            <section class="thermometer">
-             <div class="logo">
-                <div class="bar">
-                    <div class="bar-fill"></div>
-                </div>
-                <div class="circle">
-                    <div class="circle-fill"></div>
-                </div>
-             </div>   
-            </section>
-            <p class="temp-value">{{temp}}</p>
+          <p>TEMPERATURE</p>  
+          <p class="temp-value">{{temp}}</p>
+          <section class="thermometer">
+            <div class="logo">
+              <div class="bar">
+                <div class="bar-fill"></div>
+              </div>
+              <div class="circle">
+                <div class="circle-fill"></div>
+              </div>
+            </div>
+          </section>
         </div>
         <div>
-            <p class="hum-value">{{hum}}</p>
+          <p>HUMIDITY</p> 
+          <p class="hum-value">{{hum}}</p>
         </div>
+      </div>
+      <div class="frame-footer">
+        <p class="time-info">TESTE</p>
+      </div>
     </div>
     <script src="/js/forecast.js"></script>
-</body>
+  </body>
 </html>

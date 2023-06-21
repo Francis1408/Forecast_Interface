@@ -1,13 +1,13 @@
 
 class Thermometer {
     constructor (element, value) {
-        this.valueElem = value;
-        this.fillElem = element.querySelector('.bar-fill');
+        this.valueEl = value;
+        this.fillEl = element.querySelector('.bar-fill');
         this.circleFillElem = element.querySelector('.circle-fill');
-        this.setTemp(this.valueElem.innerHTML);
+        this.setTemp(this.valueEl.innerHTML);
 
-       // console.log(this.valueElem);
-       // console.log(this.fillElem);
+       // console.log(this.valueEl);
+       // console.log(this.fillEl);
     }
 
     changeColor(percentage) {
@@ -20,7 +20,7 @@ class Thermometer {
         else if (percentage < 30 && percentage > 10) color = "#008cff"
         else if (percentage < 10) color = "0000ff"
 
-        this.fillElem.style.backgroundColor = color;
+        this.fillEl.style.backgroundColor = color;
         this.circleFillElem.style.backgroundColor = color;
 
     }
@@ -43,11 +43,47 @@ class Thermometer {
     update() {
         const percentage = ((20 + this.value)/80) * 100;
         console.log(percentage);
-        this.fillElem.style.height = percentage + '%';
+        this.fillEl.style.height = percentage + '%';
         this.changeColor(percentage);
+    }
+}
+
+
+class Time {
+    constructor(element, timeInfo) {
+        this.dateEl = element;
+        this.infoEl = timeInfo;
+
+        const rawData = new Date(this.dateEl.innerHTML); 
+        this.day = this.findWeekDay(rawData.getDay());
+        this.date = rawData.getDate() + "/" + rawData.getMonth() + "/" + rawData.getFullYear();
+        this.time = rawData.getHours() + ":" + rawData.getMinutes();
+
+        console.log(this.date);
+        console.log(this.time);
+        
+        this.update();
+    }
+    
+    findWeekDay(day) {
+        switch(day) {
+            case 0 : return("Sunday");
+            case 1 : return("Monday");
+            case 2 : return("Tuesday"); 
+            case 3 : return("Wednesday"); 
+            case 4 : return("Thursday"); 
+            case 5 : return("Friday"); 
+            case 6 : return("Saturday");  
+        }
+    }
+
+    update() {
+        this.dateEl.innerHTML = this.day;
+        this.infoEl.innerHTML = "Caught by ESP32 in " + this.date + " at " + this.time;
     }
 }
 
 const thermometer = new Thermometer(document.querySelector('.thermometer'), 
                                     document.querySelector('.temp-value'));
 
+const time = new Time(document.querySelector('.time-value'), document.querySelector('.time-info'))
