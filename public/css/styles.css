@@ -21,3 +21,63 @@ h1 {
     justify-content: space-around;
     height: auto;
 }
+
+.thermometer {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    position: relative;
+    height: 450px;
+    width: 100px;
+}
+
+.bar {
+    z-index: 1;
+    height: 350px;
+    width: 40px;
+    background-color: #fefffe;
+    border-radius: 25px 25px 0 0;
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.circle {
+    height: 100px;
+    width: 100px;
+    background-color: #fefffe;
+    position: absolute;
+    bottom: 0;
+    border-radius: 50%;
+}
+
+.circle-fill {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #ff3d00;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bar-fill {
+    content: "";
+    display: block;
+    height: 20%;
+    width: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -22px;
+    border-radius: 10px 10px 0 0;
+    background-color: #ff3d00;
+}

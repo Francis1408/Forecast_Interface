@@ -7,15 +7,26 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <h1>HELLO WORLD!</h1>
+    <h1>REDES FORECAST</h1>
     <p>{{time}}</p>
     <div class="forecast-data">
         <div>
-            <p>{{temp}}</p>
+            <section class="thermometer">
+             <div class="logo">
+                <div class="bar">
+                    <div class="bar-fill"></div>
+                </div>
+                <div class="circle">
+                    <div class="circle-fill"></div>
+                </div>
+             </div>   
+            </section>
+            <p class="temp-value">{{temp}}</p>
         </div>
         <div>
-            <p>{{hum}}</p>
+            <p class="hum-value">{{hum}}</p>
         </div>
     </div>
+    <script src="/js/forecast.js"></script>
 </body>
 </html>

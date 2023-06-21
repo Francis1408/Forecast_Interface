@@ -18,7 +18,7 @@ app.set('view engine', 'hbs');
 
 
 // configuring static elements
-app.use(express.static(__dirname + '/public/'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // configuring route
 app.use('/', index);
