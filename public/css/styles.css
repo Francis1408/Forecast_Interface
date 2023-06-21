@@ -8,37 +8,52 @@ html, body {
     margin: 0;
 }
 
+body {
+    height: fit-content;
+}
+
 h1 {
-    font-family: 'Alphasmok';
+    font-family: 'Roboto';
     color: white;
-    font-size: 60px;
+    font-size: 70px;
     padding-top: 30px;
     padding-bottom: 30px;
     margin: 0;
+    text-shadow: 2px 2px #000000;
+    letter-spacing: 5px;
 }
 
 .forecast-frame {
-    height: fit-content;
+    height: 80%;
     background-color: rgba(84, 83, 83, 0.5);
     margin: 0 10%;
+    margin-bottom: 10%;
+    display: flex;
+    flex-flow: column;
 }
 
 .data {
     display: flex;
     justify-content: space-around;
+    height: auto;
+    flex: 1 1 auto;
 }
+
 
 .frame-header {
     padding: 30px;
+    padding-top: 20px;
+    flex: 0 1 content;
 }
 
 .frame-footer {
     padding: 30px;
     text-align: right;
+    flex: 0 1 40px;
 }
 
 .thermometer {
-    height: 100%;
+    height: fit-content;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -97,8 +112,34 @@ h1 {
     background-color: #ff3d00;
 }
 
-.temp-value, .hum-value {
-    font-size: 30px;
+.temp-value {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    margin: 10px;
+}
+
+.celsius-value, .fahrenheit-value, .hum-value {
+    font-size: 40px;
     margin: 0px;
-    
+    font-family: 'Roboto Bold';
+    color: gold;
+    text-shadow: 2px 2px #000000;
+}
+
+.content-title {
+    font-size: 30px;
+    font-family: 'Roboto';
+    color: red;
+    text-shadow: 2px 2px #471111;
+
+}
+
+.time-value {
+    font-size: 50px;
+    font-family: 'Roboto Bold';
+    color: rgb(24, 232, 235);
+    text-shadow: 2px 2px #1581af;
+    letter-spacing: 1px;
+    margin: 0;
 }

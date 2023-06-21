@@ -6,15 +6,18 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <h1>REDES FORECAST</h1>
+    <h1>Redes Forecast</h1>
     <div class="forecast-frame">
       <div class="frame-header">
         <p class="time-value">{{time}}</p>
       </div>
       <div class="data">
         <div>
-          <p>TEMPERATURE</p>  
-          <p class="temp-value">{{temp}}</p>
+          <p class='content-title'>TEMPERATURE</p>  
+          <div class="temp-value">
+            <p class="celsius-value">{{temp}}°C</p>
+            <p class="fahrenheit-value"> </p>
+          </div>
           <section class="thermometer">
             <div class="logo">
               <div class="bar">
@@ -27,8 +30,8 @@
           </section>
         </div>
         <div>
-          <p>HUMIDITY</p> 
-          <p class="hum-value">{{hum}}</p>
+          <p class='content-title'>HUMIDITY</p> 
+          <p class="hum-value">{{hum}}%</p>
         </div>
       </div>
       <div class="frame-footer">

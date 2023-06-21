@@ -1,9 +1,10 @@
 
 class Thermometer {
-    constructor (element, value) {
+    constructor (element, value, fahrenheit) {
         this.valueEl = value;
         this.fillEl = element.querySelector('.bar-fill');
-        this.circleFillElem = element.querySelector('.circle-fill');
+        this.circleFillEl = element.querySelector('.circle-fill');
+        this.fahrenheitEl = fahrenheit;
         this.setTemp(this.valueEl.innerHTML);
 
        // console.log(this.valueEl);
@@ -21,7 +22,7 @@ class Thermometer {
         else if (percentage < 10) color = "0000ff"
 
         this.fillEl.style.backgroundColor = color;
-        this.circleFillElem.style.backgroundColor = color;
+        this.circleFillEl.style.backgroundColor = color;
 
     }
 
@@ -41,10 +42,14 @@ class Thermometer {
     }
 
     update() {
+        // Changing the thermometer animation
         const percentage = ((20 + this.value)/80) * 100;
         console.log(percentage);
         this.fillEl.style.height = percentage + '%';
         this.changeColor(percentage);
+        // Setting fahrenheit temp
+        const fahrenheit_value = (parseFloat(this.valueEl.innerHTML)*9/5) + 32
+        this.fahrenheitEl.innerHTML = fahrenheit_value + "°F";
     }
 }
 
@@ -84,6 +89,7 @@ class Time {
 }
 
 const thermometer = new Thermometer(document.querySelector('.thermometer'), 
-                                    document.querySelector('.temp-value'));
+                                    document.querySelector('.celsius-value'),
+                                    document.querySelector('.fahrenheit-value'));
 
 const time = new Time(document.querySelector('.time-value'), document.querySelector('.time-info'))
