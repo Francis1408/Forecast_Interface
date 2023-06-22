@@ -43,7 +43,8 @@ class Thermometer {
 
     update() {
         // Changing the thermometer animation
-        const percentage = ((20 + this.value)/80) * 100;
+        
+        const percentage = ((20 + this.value)/70) * 100;
         console.log(percentage);
         this.fillEl.style.height = percentage + '%';
         this.changeColor(percentage);
