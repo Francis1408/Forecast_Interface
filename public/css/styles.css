@@ -8,10 +8,6 @@ html, body {
     margin: 0;
 }
 
-body {
-    height: fit-content;
-}
-
 h1 {
     font-family: 'Roboto';
     color: white;
@@ -24,7 +20,7 @@ h1 {
 }
 
 .forecast-frame {
-    height: 80%;
+    height: fit-content;
     background-color: rgba(84, 83, 83, 0.5);
     margin: 0 10%;
     margin-bottom: 10%;
@@ -38,7 +34,6 @@ h1 {
     height: auto;
     flex: 1 1 auto;
 }
-
 
 .frame-header {
     padding: 30px;
@@ -128,10 +123,10 @@ h1 {
 }
 
 .content-title {
-    font-size: 30px;
+    font-size: 40px;
     font-family: 'Roboto';
     color: red;
-    text-shadow: 2px 2px #471111;
+    text-shadow: 2px 2px #af0707;
 
 }
 
@@ -142,4 +137,9 @@ h1 {
     text-shadow: 2px 2px #1581af;
     letter-spacing: 1px;
     margin: 0;
+}
+
+.time-info {
+    font-size: 20px;
+    font-family: 'Roboto';
 }
